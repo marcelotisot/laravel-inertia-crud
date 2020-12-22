@@ -8,6 +8,14 @@ import Vue from 'vue';
 
 Vue.use(plugin);
 
+// Element UI
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import locale from 'element-ui/lib/locale/lang/es.js';
+
+// Element UI Globally
+Vue.use(ElementUI, { locale });
+
 const el = document.getElementById('app');
 
 new Vue({
