@@ -4,6 +4,11 @@ require('./bootstrap');
 
 // Inertia Setup
 import { App, plugin } from '@inertiajs/inertia-vue';
+
+// Inertia progress
+import { InertiaProgress } from '@inertiajs/progress';
+InertiaProgress.init()
+
 import Vue from 'vue';
 
 Vue.use(plugin);
