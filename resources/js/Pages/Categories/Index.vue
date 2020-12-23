@@ -34,8 +34,7 @@
                                 <td v-text="categorie.name"></td>
                                 <td>
                                     <inertia-link 
-                                        href="/categories/edit"
-                                        :data="{category: categorie}"
+                                        :href="$route('categories.edit', {id: categorie.id})"
                                         class="text-light">
                                         <el-button 
                                             size="small" 
@@ -46,7 +45,8 @@
                                     <el-button 
                                         size="small" 
                                         type="danger" 
-                                        icon="el-icon-delete">
+                                        icon="el-icon-delete"
+                                        @click="deleteCategory(categorie.id)">
                                     </el-button>
                                 </td>
                             </tr>
@@ -65,12 +65,23 @@
     
     export default {
         name: "Index",
+        
         layout: Layout,
+
         props: {
             categories: {
                 type: Object,
                 required: true
             }
+        },
+
+        methods: {
+            deleteCategory(id) {
+                this.$inertia.delete(`/categories/${id}`, {
+                    onBefore: () => confirm('Are you sure you want to delete this category?')
+                });
+            }
         }
+
     }
 </script>
