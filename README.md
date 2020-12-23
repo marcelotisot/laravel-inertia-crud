@@ -1,1 +1,1 @@
-# Laravel Jetstream Inertia CRUD
+# Laravel Inertia CRUD
