@@ -25,7 +25,9 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Posts</a>
+                            <inertia-link class="nav-link" href="/posts">
+                                Posts
+                            </inertia-link>
                         </li>
                     </ul>
                 </div>
