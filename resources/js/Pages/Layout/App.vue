@@ -12,7 +12,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <inertia-link class="nav-link" href="/">
                                 Home
                             </inertia-link>
