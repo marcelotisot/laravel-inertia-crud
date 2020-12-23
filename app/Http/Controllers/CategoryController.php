@@ -43,14 +43,17 @@ class CategoryController extends Controller
 
     }
 
-    public function edit(Category $category)
+    public function edit($id)
     {
-        return Inertia::render('Categories/Edit');
+        $category = Category::find($id);
+
+        return Inertia::render('Categories/Edit', ['category' => $category]);
     }
 
 
     public function update(Request $request, $id)
     {
+
         $category = Category::find($id);
 
         $category->name = $request->input('name');
@@ -58,10 +61,17 @@ class CategoryController extends Controller
 
         return redirect()->route('categories.index')
             ->with('message', 'Category updated!');
+            
     }
 
-    public function destroy(Category $category)
+    public function destroy($id)
     {
-        //
+
+        $category = Category::find($id);
+        $category->delete();
+
+        return redirect()->route('categories.index')
+            ->with('message', 'Category deleted!');
+
     }
 }
