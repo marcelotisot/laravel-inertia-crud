@@ -21,6 +21,10 @@ import locale from 'element-ui/lib/locale/lang/es.js';
 // Element UI Globally
 Vue.use(ElementUI, { locale });
 
+// Custom $route property
+//Vue.prototype.$route = (...args) => route(...args).url();
+Vue.prototype.$route = (...args) => route(...args);
+
 const el = document.getElementById('app');
 
 new Vue({
