@@ -2,8 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*Route::get('/', function () {
-    return view('app');
-});*/
+// Controllers
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PostController;
 
-Route::inertia('/', 'Hello');
+Route::inertia('/', 'Dashboard');
+
+
+Route::resource('categories', CategoryController::class);
+Route::resource('posts', PostController::class);
