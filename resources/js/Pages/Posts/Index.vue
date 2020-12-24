@@ -67,6 +67,10 @@
                         </tbody>
                     </table>
                 </div>
+
+                <div class="card-footer">
+                    <Pagination :links="posts.links" />
+                </div>
             </div>
         </div>
     </div>
@@ -76,6 +80,9 @@
 // Shared Layout
 import Layout from "../Layout/App";
 
+// Pagination Component
+import Pagination from "../Shared/Pagination";
+
 // Moment
 import moment from "moment";
 
@@ -83,6 +90,10 @@ export default {
     name: "Index",
 
     layout: Layout,
+
+    components: {
+        Pagination
+    },
 
     props: {
         posts: {

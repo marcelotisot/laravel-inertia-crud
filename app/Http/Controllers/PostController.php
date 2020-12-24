@@ -19,7 +19,7 @@ class PostController extends Controller
 
         $posts = Post::with('category')
             ->orderBy('id', 'desc')
-            ->paginate(8);
+            ->paginate(5);
 
         return Inertia::render('Posts/Index', [
             'posts' => $posts

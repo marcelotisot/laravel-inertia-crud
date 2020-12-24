@@ -14,7 +14,7 @@ class CategoryController extends Controller
     {
         
         $categories = Category::orderBy('id', 'desc')
-            ->paginate(8);
+            ->paginate(5);
 
         return Inertia::render('Categories/Index', [
             'categories' => $categories
@@ -34,9 +34,12 @@ class CategoryController extends Controller
             'name' => 'required'
         ]);
 
-        Category::create([
-            'name' => $request->input('name')
-        ]);
+        if ($validated)
+        {
+            Category::create([
+                'name' => $request->input('name')
+            ]);
+        }
 
         return redirect()->route('categories.index')
             ->with('message', 'Category saved!');
